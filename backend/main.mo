@@ -7,6 +7,8 @@ import Array "mo:core/Array";
 import Runtime "mo:core/Runtime";
 import Principal "mo:core/Principal";
 
+
+
 actor {
   type UserId = Principal;
   type PostId = Nat32;
@@ -25,6 +27,7 @@ actor {
     content : Text;
     bananaReactions : Nat;
     timestamp : Time.Time;
+    image : ?Text; // base64 image
   };
 
   var nextPostId : PostId = 1;
@@ -50,7 +53,7 @@ actor {
     users.get(id);
   };
 
-  public shared ({ caller }) func createPost(content : Text) : async () {
+  public shared ({ caller }) func createPost(content : Text, image : ?Text) : async () {
     let author = switch (users.get(caller)) {
       case (null) { Runtime.trap("User does not exist") };
       case (?user) { user };
@@ -61,6 +64,7 @@ actor {
       content;
       bananaReactions = 0;
       timestamp = Time.now();
+      image;
     };
     posts.add(nextPostId, newPost);
     nextPostId += 1;

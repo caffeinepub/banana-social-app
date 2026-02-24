@@ -13,6 +13,7 @@ export interface Post {
     authorId: UserId;
     bananaReactions: bigint;
     timestamp: Time;
+    image?: string;
 }
 export type UserId = Principal;
 export type Time = bigint;
@@ -25,7 +26,7 @@ export interface User {
 }
 export type PostId = number;
 export interface backendInterface {
-    createPost(content: string): Promise<void>;
+    createPost(content: string, image: string | null): Promise<void>;
     createUser(username: string, avatarEmoji: string): Promise<void>;
     followUser(followeeId: UserId): Promise<void>;
     getFollowers(userId: UserId): Promise<Array<UserId>>;

@@ -23,9 +23,9 @@ export function useCreatePost() {
   const queryClient = useQueryClient();
 
   return useMutation({
-    mutationFn: async (content: string) => {
+    mutationFn: async ({ content, image }: { content: string; image: string | null }) => {
       if (!actor) throw new Error('Actor not ready');
-      return actor.createPost(content);
+      return actor.createPost(content, image);
     },
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['posts'] });

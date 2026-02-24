@@ -1,83 +1,22 @@
 {
   "schemaVersion": "1.0.0",
   "projectStateVersion": 3,
-  "summary": "A fun banana-themed social platform built with React + Motoko. Users can post banana-related content, react with banana emojis, follow other users, and browse a feed of banana posts.",
-  "architectural_notes": [
-    "Built with React (frontend) and Motoko (backend/smart contracts on ICP)"
-  ],
+  "summary": "New project",
+  "architectural_notes": [],
   "known_issues": [],
   "isFixRequest": false,
-  "imageRequirements": "## Required Images\n- Cartoon banana bunch logo with a cheerful face on a transparent background (banana-logo.dim_256x256.png)\n- Warm yellow textured banner background with scattered hand-drawn banana illustrations (feed-banner.dim_1200x300.png)",
   "existing_features": [
     {
-      "id": "feature-build-a-global-feed-page-that-fetches-and-displays-all-posts-in-reverse-chronological-order-each-post-card-must-show-the-author-s-username-avatar-emoji-post-content-timestamp-and-a-banana-reaction-button-displaying-the-current-reaction-count-clicking-the-reaction-button-calls-reacttopost-on-the-backend",
-      "title": "Build a global feed page that fetches and displays all posts in reverse-chronological order. Each post card must show the author's username, avatar emoji, post content, timestamp, and a banana reaction button (🍌) displaying the current reaction count. Clicking the reaction button calls reactToPost on the backend.",
-      "reqIds": [
-        "REQ-2"
-      ],
-      "version": 1
-    },
-    {
-      "id": "feature-build-a-compose-post-ui-a-text-area-max-280-characters-with-a-submit-button-that-calls-createpost-on-the-backend-and-prepends-the-new-post-to-the-feed-on-success",
-      "title": "Build a Compose Post UI — a text area (max 280 characters) with a 🍌 submit button — that calls createPost on the backend and prepends the new post to the feed on success.",
-      "reqIds": [
-        "REQ-3"
-      ],
-      "version": 1
-    },
-    {
-      "id": "feature-build-a-user-profile-page-that-displays-the-user-s-username-avatar-emoji-follower-count-following-count-and-their-posts-include-follow-unfollow-toggle-button-that-calls-followuser-or-unfollowuser-on-the-backend-and-updates-the-counts-in-the-ui",
-      "title": "Build a User Profile page that displays the user's username, avatar emoji, follower count, following count, and their posts. Include Follow / Unfollow toggle button that calls followUser or unfollowUser on the backend and updates the counts in the UI.",
-      "reqIds": [
-        "REQ-4"
-      ],
-      "version": 1
-    },
-    {
-      "id": "feature-apply-a-bold-playful-visual-theme-inspired-by-bananas-a-warm-yellow-and-deep-brown-color-palette-rounded-card-components-banana-emoji-accents-throughout-the-ui-cheerful-sans-serif-typography-and-a-sticky-top-navigation-bar-with-the-app-logo-and-links-to-feed-and-profile-keep-the-layout-mobile-friendly-and-enforce-the-theme-consistently-across-all-pages",
-      "title": "Apply a bold, playful visual theme inspired by bananas: a warm yellow and deep brown color palette, rounded card components, banana-emoji accents throughout the UI, cheerful sans-serif typography, and a sticky top navigation bar with the app logo and links to Feed and Profile. Keep the layout mobile-friendly and enforce the theme consistently across all pages.",
-      "reqIds": [
-        "REQ-5"
-      ],
-      "version": 1
-    }
-  ],
-  "new_feature_requests": [
-    {
-      "id": "AR-1",
-      "summary": "Post banana-related content",
-      "reqIds": [],
-      "status": "pending"
-    },
-    {
-      "id": "AR-2",
-      "summary": "React to posts with banana emojis",
-      "reqIds": [],
-      "status": "pending"
-    },
-    {
-      "id": "AR-3",
-      "summary": "Follow other users",
-      "reqIds": [],
-      "status": "pending"
-    },
-    {
-      "id": "AR-4",
-      "summary": "Browse a feed of banana posts",
-      "reqIds": [],
-      "status": "pending"
-    },
-    {
-      "id": "AR-5",
-      "summary": "Implement a backend data model and actor with the following entities: User (id, username, avatarEmoji, followersCount, followingCount), Post (id, authorId, content, bananaReactions, timestamp), and Follow (followerId, followeeId). Expose query and update methods: createUser, getUser, createPost, getPosts (paginated feed), reactToPost (increment banana reaction count), followUser, unfollowUser, getFollowers, getFollowing.",
+      "id": "feature-remove-the-logo-design-om-symbol-or-any-custom-logo-image-graphic-from-the-navigation-component-replace-it-with-plain-text-branding-or-remove-it-entirely-leaving-no-logo-asset-rendered-in-the-nav-bar",
+      "title": "Remove the logo design (Om symbol or any custom logo image/graphic) from the Navigation component. Replace it with plain text branding or remove it entirely, leaving no logo asset rendered in the nav bar.",
       "reqIds": [
         "REQ-1"
       ],
-      "status": "pending"
+      "version": 1
     }
   ],
-  "gameProjectType": "none",
-  "projectName": "Banana Social App",
+  "new_feature_requests": [],
+  "projectName": "Remove logo from navigation",
   "clarification_mode": "instant",
   "clarification_rounds": 0
 }

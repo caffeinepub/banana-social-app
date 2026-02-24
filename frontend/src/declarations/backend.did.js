@@ -17,6 +17,7 @@ export const Post = IDL.Record({
   'authorId' : UserId,
   'bananaReactions' : IDL.Nat,
   'timestamp' : Time,
+  'image' : IDL.Opt(IDL.Text),
 });
 export const User = IDL.Record({
   'id' : UserId,
@@ -27,7 +28,7 @@ export const User = IDL.Record({
 });
 
 export const idlService = IDL.Service({
-  'createPost' : IDL.Func([IDL.Text], [], []),
+  'createPost' : IDL.Func([IDL.Text, IDL.Opt(IDL.Text)], [], []),
   'createUser' : IDL.Func([IDL.Text, IDL.Text], [], []),
   'followUser' : IDL.Func([UserId], [], []),
   'getFollowers' : IDL.Func([UserId], [IDL.Vec(UserId)], ['query']),
@@ -50,6 +51,7 @@ export const idlFactory = ({ IDL }) => {
     'authorId' : UserId,
     'bananaReactions' : IDL.Nat,
     'timestamp' : Time,
+    'image' : IDL.Opt(IDL.Text),
   });
   const User = IDL.Record({
     'id' : UserId,
@@ -60,7 +62,7 @@ export const idlFactory = ({ IDL }) => {
   });
   
   return IDL.Service({
-    'createPost' : IDL.Func([IDL.Text], [], []),
+    'createPost' : IDL.Func([IDL.Text, IDL.Opt(IDL.Text)], [], []),
     'createUser' : IDL.Func([IDL.Text, IDL.Text], [], []),
     'followUser' : IDL.Func([UserId], [], []),
     'getFollowers' : IDL.Func([UserId], [IDL.Vec(UserId)], ['query']),

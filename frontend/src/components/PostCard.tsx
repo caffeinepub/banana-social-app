@@ -61,9 +61,23 @@ export default function PostCard({ post, author, onReact, isReacting }: PostCard
           </div>
 
           {/* Content */}
-          <p className="mt-1.5 text-foreground leading-relaxed whitespace-pre-wrap break-words">
-            {post.content}
-          </p>
+          {post.content && (
+            <p className="mt-1.5 text-foreground leading-relaxed whitespace-pre-wrap break-words">
+              {post.content}
+            </p>
+          )}
+
+          {/* Image */}
+          {post.image && (
+            <div className="mt-2">
+              <img
+                src={`data:image/jpeg;base64,${post.image}`}
+                alt="Post image"
+                className="max-w-full rounded-xl border border-banana/15 object-cover"
+                style={{ maxHeight: '400px' }}
+              />
+            </div>
+          )}
         </div>
       </div>
 

@@ -16,6 +16,7 @@ export interface Post {
   'authorId' : UserId,
   'bananaReactions' : bigint,
   'timestamp' : Time,
+  'image' : [] | [string],
 }
 export type PostId = number;
 export type Time = bigint;
@@ -28,7 +29,7 @@ export interface User {
 }
 export type UserId = Principal;
 export interface _SERVICE {
-  'createPost' : ActorMethod<[string], undefined>,
+  'createPost' : ActorMethod<[string, [] | [string]], undefined>,
   'createUser' : ActorMethod<[string, string], undefined>,
   'followUser' : ActorMethod<[UserId], undefined>,
   'getFollowers' : ActorMethod<[UserId], Array<UserId>>,

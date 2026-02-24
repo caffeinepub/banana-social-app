@@ -82,8 +82,8 @@ export default function FeedPage() {
     }
   }, [isLoadingUser, currentUser, principalStr]);
 
-  const handlePost = async (content: string) => {
-    await createPostMutation.mutateAsync(content);
+  const handlePost = async (content: string, image: string | null) => {
+    await createPostMutation.mutateAsync({ content, image });
   };
 
   const handleReact = (postId: number) => {

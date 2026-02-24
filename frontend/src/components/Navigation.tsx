@@ -31,14 +31,9 @@ export default function Navigation() {
   return (
     <header className="sticky top-0 z-50 w-full bg-nav border-b border-nav-border shadow-nav">
       <div className="max-w-2xl mx-auto px-4 h-16 flex items-center justify-between">
-        {/* Logo */}
+        {/* Branding */}
         <Link to="/feed" className="flex items-center gap-2 group">
-          <img
-            src="/assets/generated/banana-logo.dim_256x256.png"
-            alt="Banana Social"
-            className="w-9 h-9 object-contain group-hover:scale-110 transition-transform duration-200"
-          />
-          <span className="font-display font-extrabold text-xl text-banana-dark tracking-tight hidden sm:block">
+          <span className="font-display font-extrabold text-xl text-banana-dark tracking-tight">
             BananaSocial
           </span>
         </Link>

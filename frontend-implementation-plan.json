@@ -1,126 +1,21 @@
 {
   "kind": "implementation_plan",
   "version": "1.0",
-  "title": "Banana Social App — Frontend Implementation",
+  "title": "Remove logo from navigation",
   "requirements": [
     {
-      "id": "REQ-2",
-      "summary": "Build a global feed page displaying all posts with banana reaction functionality",
+      "id": "REQ-1",
+      "summary": "Remove the logo design from the Navigation component, replacing it with plain text branding or removing it entirely",
       "acceptanceCriteria": [
-        "Feed page loads and displays posts from the backend.",
-        "Posts are shown newest-first.",
-        "Each post card displays author info, content, timestamp, and banana reaction count.",
-        "Clicking 🍌 sends a reactToPost call and updates the displayed count optimistically."
+        "No logo image or custom graphic is rendered in the Navigation component.",
+        "The navigation bar remains functional with Feed and Profile links intact.",
+        "No broken image references or missing asset errors appear in the console."
       ],
       "file_operations": [
-        {
-          "path": "frontend/src/pages/FeedPage.tsx",
-          "operation": "create",
-          "description": "Create the Feed page component that fetches posts via getPosts backend method and displays them in reverse-chronological order. Include loading and error states."
-        },
-        {
-          "path": "frontend/src/components/PostCard.tsx",
-          "operation": "create",
-          "description": "Create a PostCard component that displays author username, avatar emoji, post content, timestamp, and a banana reaction button (🍌) with the current reaction count. Handle optimistic UI updates when the reaction button is clicked."
-        },
-        {
-          "path": "frontend/src/hooks/usePosts.ts",
-          "operation": "create",
-          "description": "Create a custom hook that fetches posts from the backend using getPosts method with pagination support (start, limit). Return posts array, loading state, error state, and a refetch function."
-        },
-        {
-          "path": "frontend/src/App.tsx",
-          "operation": "modify",
-          "description": "Add React Router routes and wire the FeedPage component to the '/feed' route. Set '/feed' as the default landing route."
-        }
-      ]
-    },
-    {
-      "id": "REQ-3",
-      "summary": "Build a Compose Post UI with character limit enforcement",
-      "acceptanceCriteria": [
-        "Compose area enforces a 280-character limit with a visible character counter.",
-        "Submitting a non-empty post calls createPost and the new post appears at the top of the feed.",
-        "Submit button is disabled when the input is empty or exceeds 280 characters."
-      ],
-      "file_operations": [
-        {
-          "path": "frontend/src/components/ComposePost.tsx",
-          "operation": "create",
-          "description": "Create a ComposePost component with a textarea (max 280 characters), visible character counter, and a 🍌 submit button. The submit button should be disabled when input is empty or exceeds 280 characters. On submit, call createPost backend method and trigger a feed refresh."
-        },
-        {
-          "path": "frontend/src/pages/FeedPage.tsx",
-          "operation": "modify",
-          "description": "Integrate the ComposePost component at the top of the FeedPage and pass a callback to refresh the posts list after successful post creation."
-        }
-      ]
-    },
-    {
-      "id": "REQ-4",
-      "summary": "Build a User Profile page with follow/unfollow functionality",
-      "acceptanceCriteria": [
-        "Visiting a profile page shows that user's info and their posts.",
-        "Follower and following counts are displayed and update after follow/unfollow actions.",
-        "Follow button toggles between Follow and Unfollow states based on current relationship."
-      ],
-      "file_operations": [
-        {
-          "path": "frontend/src/pages/ProfilePage.tsx",
-          "operation": "create",
-          "description": "Create a ProfilePage component that fetches user data via getUser backend method and displays username, avatar emoji, follower count, following count, and the user's posts. Include a Follow/Unfollow toggle button that calls followUser or unfollowUser and updates counts in the UI."
-        },
-        {
-          "path": "frontend/src/hooks/useUser.ts",
-          "operation": "create",
-          "description": "Create a custom hook that fetches user data from the backend using getUser method. Return user object, loading state, error state, and a refetch function."
-        },
-        {
-          "path": "frontend/src/hooks/useFollow.ts",
-          "operation": "create",
-          "description": "Create a custom hook that manages follow/unfollow actions by calling followUser or unfollowUser backend methods. Return follow function, unfollow function, loading state, and error state."
-        },
-        {
-          "path": "frontend/src/App.tsx",
-          "operation": "modify",
-          "description": "Add a route for ProfilePage at '/profile/:userId' and wire it into the router configuration."
-        }
-      ]
-    },
-    {
-      "id": "REQ-5",
-      "summary": "Apply a bold, playful banana-themed visual design with sticky navigation",
-      "acceptanceCriteria": [
-        "All pages use the yellow/brown banana color palette via Tailwind theme tokens.",
-        "Navigation bar is sticky and present on all pages with Feed and Profile links.",
-        "Cards, buttons, and interactive elements use consistent rounded styling.",
-        "Layout is responsive and usable on mobile screen widths."
-      ],
-      "file_operations": [
-        {
-          "path": "frontend/tailwind.config.js",
-          "operation": "modify",
-          "description": "Extend the Tailwind theme to include banana-inspired color tokens: warm yellow (primary), deep brown (secondary), and accent colors. Configure default rounded styles for consistent card and button styling."
-        },
-        {
-          "path": "frontend/src/index.css",
-          "operation": "modify",
-          "description": "Apply global base styles for the banana theme including cheerful sans-serif typography (e.g., 'Quicksand', 'Nunito', or similar web-safe font), default text colors, and background colors using the Tailwind theme tokens."
-        },
         {
           "path": "frontend/src/components/Navigation.tsx",
-          "operation": "create",
-          "description": "Create a sticky top navigation bar component with the app logo (using the generated banana logo at frontend/public/assets/generated/banana-logo.dim_256x256.png) and navigation links to Feed and Profile pages. Use banana theme colors and ensure mobile responsiveness."
-        },
-        {
-          "path": "frontend/src/components/Layout.tsx",
-          "operation": "create",
-          "description": "Create a Layout component that wraps page content with the Navigation component and applies consistent page structure with banana-themed styling. Use the generated banner background (frontend/public/assets/generated/feed-banner.dim_1200x300.png) as a decorative header element."
-        },
-        {
-          "path": "frontend/src/App.tsx",
           "operation": "modify",
-          "description": "Wrap all routes with the Layout component to ensure consistent navigation and theming across all pages."
+          "description": "Remove any logo image or custom graphic rendering (Om symbol or other logo assets). Replace with plain text branding or remove the logo section entirely while preserving the Feed and Profile navigation links. Ensure no broken image references remain."
         }
       ]
     }
