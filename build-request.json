@@ -1,0 +1,121 @@
+{
+  "kind": "build_request",
+  "title": "Banana Social App — Initial Build",
+  "projectName": "Banana Social",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "text": "Implement a backend data model and actor with the following entities: User (id, username, avatarEmoji, followersCount, followingCount), Post (id, authorId, content, bananaReactions, timestamp), and Follow (followerId, followeeId). Expose query and update methods: createUser, getUser, createPost, getPosts (paginated feed), reactToPost (increment banana reaction count), followUser, unfollowUser, getFollowers, getFollowing.",
+      "target": "backend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "post banana-related content, react with banana emojis, follow other users, and browse a feed of banana posts"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Users can be created and retrieved by ID.",
+        "Posts can be created with text content and retrieved as a paginated feed sorted by most recent.",
+        "Reacting to a post increments its banana reaction count.",
+        "Follow/unfollow operations update follower and following counts correctly.",
+        "All state is persisted in stable variables."
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "text": "Build a global feed page that fetches and displays all posts in reverse-chronological order. Each post card must show the author's username, avatar emoji, post content, timestamp, and a banana reaction button (🍌) displaying the current reaction count. Clicking the reaction button calls reactToPost on the backend.",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "browse a feed of banana posts",
+          "react with banana emojis"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Feed page loads and displays posts from the backend.",
+        "Posts are shown newest-first.",
+        "Each post card displays author info, content, timestamp, and banana reaction count.",
+        "Clicking 🍌 sends a reactToPost call and updates the displayed count optimistically."
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "text": "Build a Compose Post UI — a text area (max 280 characters) with a 🍌 submit button — that calls createPost on the backend and prepends the new post to the feed on success.",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "post banana-related content"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Compose area enforces a 280-character limit with a visible character counter.",
+        "Submitting a non-empty post calls createPost and the new post appears at the top of the feed.",
+        "Submit button is disabled when the input is empty or exceeds 280 characters."
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "text": "Build a User Profile page that displays the user's username, avatar emoji, follower count, following count, and their posts. Include Follow / Unfollow toggle button that calls followUser or unfollowUser on the backend and updates the counts in the UI.",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "follow other users"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Visiting a profile page shows that user's info and their posts.",
+        "Follower and following counts are displayed and update after follow/unfollow actions.",
+        "Follow button toggles between Follow and Unfollow states based on current relationship."
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "text": "Apply a bold, playful visual theme inspired by bananas: a warm yellow and deep brown color palette, rounded card components, banana-emoji accents throughout the UI, cheerful sans-serif typography, and a sticky top navigation bar with the app logo and links to Feed and Profile. Keep the layout mobile-friendly and enforce the theme consistently across all pages.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "fun social platform themed around everyone's favorite yellow fruit"
+        ]
+      },
+      "acceptanceCriteria": [
+        "All pages use the yellow/brown banana color palette via Tailwind theme tokens.",
+        "Navigation bar is sticky and present on all pages with Feed and Profile links.",
+        "Cards, buttons, and interactive elements use consistent rounded styling.",
+        "Layout is responsive and usable on mobile screen widths."
+      ]
+    }
+  ],
+  "constraints": [
+    "All backend logic must reside in a single Motoko actor in backend/main.mo.",
+    "Do not edit any files listed in frontend.immutablePaths.",
+    "Use Tailwind CSS utility classes for all styling; do not introduce external CSS frameworks."
+  ],
+  "nonGoals": [
+    "User authentication via Internet Identity (can be added later).",
+    "Image or video uploads in posts.",
+    "Direct messaging between users.",
+    "Push notifications or real-time updates via WebSockets."
+  ],
+  "imageRequirements": {
+    "required": [
+      "Cartoon banana bunch logo with a cheerful face on a transparent background (banana-logo.dim_256x256.png)",
+      "Warm yellow textured banner background with scattered hand-drawn banana illustrations (feed-banner.dim_1200x300.png)"
+    ],
+    "edits": []
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "kind": "spec_vs_diff_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-24T14:44:31.969Z",
+  "summary": "The implementation covers all five requirements broadly well. The backend Motoko actor implements all required entities and methods. The frontend builds a feed page, compose post UI, profile page, and banana-themed navigation. However, there are a few notable gaps: stable variables are not confirmed in the truncated backend code, and the backend data model uses mutable Maps (let) without explicit stable variable declarations visible in the diff. The images required by the build request are referenced but not included as added files (2 files omitted due to limits, likely the images). Overall coverage is strong.",
+  "missing_requirements": [
+    {
+      "id": "REQ-1",
+      "requirement": "All state is persisted in stable variables",
+      "reason": "The backend code uses `let users = Map.empty<UserId, User>()` and similar declarations without the `stable` keyword visible in the shown portion. The diff is truncated so stable variable declarations may exist later, but there is no evidence of stable variable usage for persistence in the visible code.",
+      "evidence": [
+        "backend/main.mo"
+      ]
+    }
+  ],
+  "hallucinated_features": [
+    {
+      "description": "CreateProfileModal — a first-time user onboarding flow with username input and emoji avatar picker",
+      "reason": "The build request does not specify a profile creation modal or onboarding flow. REQ-1 only requires a createUser method; REQ-4 describes profile display and follow/unfollow. A modal dialog for first-time signup was added without being requested.",
+      "evidence": [
+        "frontend/src/components/CreateProfileModal.tsx",
+        "frontend/src/pages/FeedPage.tsx"
+      ]
+    },
+    {
+      "description": "Footer component with caffeine.ai attribution link",
+      "reason": "The build request does not mention a footer or any attribution link. This component was added without being requested.",
+      "evidence": [
+        "frontend/src/components/Footer.tsx"
+      ]
+    },
+    {
+      "description": "Cmd/Ctrl+Enter keyboard shortcut to submit a post",
+      "reason": "The build request specifies a submit button with a 280-character limit but does not mention a keyboard shortcut for submission.",
+      "evidence": [
+        "frontend/src/components/ComposePost.tsx"
+      ]
+    },
+    {
+      "description": "Dark mode theme support via CSS custom properties",
+      "reason": "The build request specifies a warm yellow and deep brown banana color palette and Tailwind theming but does not request dark mode support.",
+      "evidence": [
+        "frontend/src/index.css"
+      ]
+    }
+  ],
+  "confidence": 0.72,
+  "changed_files": [
+    "all_files_summary.json",
+    "backend/main.mo",
+    "frontend-file-summaries.txt",
+    "frontend/index.css",
+    "frontend/index.html",
+    "frontend/src/App.tsx",
+    "frontend/src/components/ComposePost.tsx",
+    "frontend/src/components/CreateProfileModal.tsx",
+    "frontend/src/components/Footer.tsx",
+    "frontend/src/components/Layout.tsx",
+    "frontend/src/components/Navigation.tsx",
+    "frontend/src/components/PostCard.tsx",
+    "frontend/src/hooks/useActor.ts",
+    "frontend/src/hooks/useCurrentUser.ts",
+    "frontend/src/hooks/useInternetIdentity.ts",
+    "frontend/src/hooks/useQueries.ts",
+    "frontend/src/index.css",
+    "frontend/src/main.tsx",
+    "frontend/src/pages/FeedPage.tsx",
+    "frontend/src/pages/ProfilePage.tsx",
+    "frontend/tailwind.config.js",
+    "project_state.json"
+  ]
+}

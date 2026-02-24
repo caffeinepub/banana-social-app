@@ -1,0 +1,85 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-build-a-global-feed-page-that-fetches-and-displays-all-posts-in-reverse-chronological-order-each-post-card-must-show-the-author-s-username-avatar-emoji-post-content-timestamp-and-a-banana-reaction-button-displaying-the-current-reaction-count-clicking-the-reaction-button-calls-reacttopost-on-the-backend",
+      "featureTitle": "Build a global feed page that fetches and displays all posts in reverse-chronological order. Each post card must show the author's username, avatar emoji, post content, timestamp, and a banana reaction button (🍌) displaying the current reaction count. Clicking the reaction button calls reactToPost on the backend.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/PostCard.tsx",
+        "frontend/src/pages/FeedPage.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-2"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-build-a-compose-post-ui-a-text-area-max-280-characters-with-a-submit-button-that-calls-createpost-on-the-backend-and-prepends-the-new-post-to-the-feed-on-success",
+      "featureTitle": "Build a Compose Post UI — a text area (max 280 characters) with a 🍌 submit button — that calls createPost on the backend and prepends the new post to the feed on success.",
+      "files": [
+        "frontend/src/components/ComposePost.tsx",
+        "frontend/src/pages/FeedPage.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-3"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-build-a-user-profile-page-that-displays-the-user-s-username-avatar-emoji-follower-count-following-count-and-their-posts-include-follow-unfollow-toggle-button-that-calls-followuser-or-unfollowuser-on-the-backend-and-updates-the-counts-in-the-ui",
+      "featureTitle": "Build a User Profile page that displays the user's username, avatar emoji, follower count, following count, and their posts. Include Follow / Unfollow toggle button that calls followUser or unfollowUser on the backend and updates the counts in the UI.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/pages/ProfilePage.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-4"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-apply-a-bold-playful-visual-theme-inspired-by-bananas-a-warm-yellow-and-deep-brown-color-palette-rounded-card-components-banana-emoji-accents-throughout-the-ui-cheerful-sans-serif-typography-and-a-sticky-top-navigation-bar-with-the-app-logo-and-links-to-feed-and-profile-keep-the-layout-mobile-friendly-and-enforce-the-theme-consistently-across-all-pages",
+      "featureTitle": "Apply a bold, playful visual theme inspired by bananas: a warm yellow and deep brown color palette, rounded card components, banana-emoji accents throughout the UI, cheerful sans-serif typography, and a sticky top navigation bar with the app logo and links to Feed and Profile. Keep the layout mobile-friendly and enforce the theme consistently across all pages.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/Layout.tsx",
+        "frontend/src/components/Navigation.tsx",
+        "frontend/src/index.css",
+        "frontend/tailwind.config.js"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-5"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

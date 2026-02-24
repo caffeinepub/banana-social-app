@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&family=Nunito+Sans:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 0.75rem;
+
+    /* ── Banana Social Light Theme ── */
+    /* Background: warm cream */
+    --background: 0.975 0.012 85;
+    /* Foreground: deep cocoa */
+    --foreground: 0.22 0.04 55;
+
+    /* Card: soft white-cream */
+    --card: 0.995 0.006 80;
+    --card-foreground: 0.22 0.04 55;
+
+    /* Popover */
+    --popover: 0.995 0.006 80;
+    --popover-foreground: 0.22 0.04 55;
+
+    /* Primary: deep cocoa brown */
+    --primary: 0.32 0.07 50;
+    --primary-foreground: 0.97 0.015 85;
+
+    /* Secondary: light banana yellow */
+    --secondary: 0.94 0.08 90;
+    --secondary-foreground: 0.28 0.06 50;
+
+    /* Muted: warm gray */
+    --muted: 0.93 0.015 80;
+    --muted-foreground: 0.52 0.03 60;
+
+    /* Accent: golden amber */
+    --accent: 0.88 0.12 80;
+    --accent-foreground: 0.25 0.06 50;
+
+    /* Destructive */
+    --destructive: 0.577 0.245 27.325;
+    --destructive-foreground: 0.985 0 0;
+
+    /* Border & Input */
+    --border: 0.88 0.04 80;
+    --input: 0.88 0.04 80;
+    --ring: 0.78 0.14 85;
+
+    /* Nav */
+    --nav-bg: 0.985 0.018 85;
+    --nav-border: 0.88 0.05 82;
+
+    /* Banana tokens */
+    --banana: 0.88 0.18 90;
+    --banana-light: 0.95 0.12 92;
+    --banana-dark: 0.38 0.09 55;
+
+    /* Charts */
+    --chart-1: 0.78 0.18 88;
+    --chart-2: 0.65 0.14 60;
+    --chart-3: 0.55 0.12 45;
+    --chart-4: 0.82 0.16 95;
+    --chart-5: 0.70 0.20 80;
+
+    /* Sidebar */
+    --sidebar: 0.985 0.018 85;
+    --sidebar-foreground: 0.22 0.04 55;
+    --sidebar-primary: 0.32 0.07 50;
+    --sidebar-primary-foreground: 0.97 0.015 85;
+    --sidebar-accent: 0.94 0.08 90;
+    --sidebar-accent-foreground: 0.28 0.06 50;
+    --sidebar-border: 0.88 0.04 80;
+    --sidebar-ring: 0.78 0.14 85;
+  }
+
+  .dark {
+    /* Background: deep cocoa */
+    --background: 0.16 0.04 50;
+    --foreground: 0.95 0.015 85;
+
+    --card: 0.21 0.045 52;
+    --card-foreground: 0.95 0.015 85;
+
+    --popover: 0.24 0.04 52;
+    --popover-foreground: 0.95 0.015 85;
+
+    /* Primary: banana yellow */
+    --primary: 0.88 0.18 90;
+    --primary-foreground: 0.22 0.04 55;
+
+    --secondary: 0.28 0.05 52;
+    --secondary-foreground: 0.92 0.015 85;
+
+    --muted: 0.26 0.04 52;
+    --muted-foreground: 0.65 0.03 70;
+
+    --accent: 0.35 0.07 55;
+    --accent-foreground: 0.92 0.015 85;
+
+    --destructive: 0.704 0.191 22.216;
+    --destructive-foreground: 0.205 0 0;
+
+    --border: 1 0 0 / 12%;
+    --input: 1 0 0 / 15%;
+    --ring: 0.78 0.14 85;
+
+    --nav-bg: 0.19 0.045 52;
+    --nav-border: 1 0 0 / 10%;
+
+    --banana: 0.88 0.18 90;
+    --banana-light: 0.93 0.12 92;
+    --banana-dark: 0.95 0.015 85;
+
+    --chart-1: 0.78 0.18 88;
+    --chart-2: 0.65 0.14 60;
+    --chart-3: 0.55 0.12 45;
+    --chart-4: 0.82 0.16 95;
+    --chart-5: 0.70 0.20 80;
+
+    --sidebar: 0.19 0.045 52;
+    --sidebar-foreground: 0.95 0.015 85;
+    --sidebar-primary: 0.88 0.18 90;
+    --sidebar-primary-foreground: 0.22 0.04 55;
+    --sidebar-accent: 0.28 0.05 52;
+    --sidebar-accent-foreground: 0.92 0.015 85;
+    --sidebar-border: 1 0 0 / 10%;
+    --sidebar-ring: 0.78 0.14 85;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Nunito Sans', 'Nunito', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: 'Nunito', system-ui, sans-serif;
+  }
+
+  .shadow-card {
+    box-shadow: 0 1px 4px 0 oklch(0.22 0.04 55 / 0.06), 0 0 0 1px oklch(0.88 0.04 80 / 0.5);
+  }
+
+  .shadow-card-hover {
+    box-shadow: 0 4px 16px 0 oklch(0.22 0.04 55 / 0.10), 0 0 0 1px oklch(0.88 0.04 80 / 0.5);
+  }
+
+  .shadow-nav {
+    box-shadow: 0 1px 0 0 oklch(var(--nav-border)), 0 2px 8px 0 oklch(0.22 0.04 55 / 0.06);
+  }
+
+  .pl-13 {
+    padding-left: 3.25rem;
+  }
+}

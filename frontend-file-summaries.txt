@@ -1,0 +1,15 @@
+{
+  "frontend/src/App.tsx": "Main app entry with TanStack Router setup, defining routes for `/feed` and `/profile/:userId`, with a root layout wrapping all routes and a redirect from `/` to `/feed`.",
+  "frontend/src/hooks/useQueries.ts": "All React Query hooks for backend interactions — fetching posts, creating posts, reacting to posts, getting/creating users, follow/unfollow operations, and fetching followers/following lists.",
+  "frontend/src/hooks/useCurrentUser.ts": "Custom hook that fetches the current user from the backend using the actor's principal, and exposes a `createUser` mutation for profile creation.",
+  "frontend/src/components/Layout.tsx": "Thin layout wrapper that composes the Navigation and Footer around page content with a flex-column full-height structure.",
+  "frontend/src/components/Navigation.tsx": "Sticky top navigation bar with banana logo, Feed link, and a Profile link that uses TanStack Router's typed `to=\"/profile/$userId\"` with `params` prop to avoid template-literal type errors.",
+  "frontend/src/components/Footer.tsx": "App footer with copyright year, banana emoji branding, and a caffeine.ai attribution link with UTM tracking.",
+  "frontend/src/components/CreateProfileModal.tsx": "Modal dialog for first-time users to create a profile by entering a username and selecting an avatar emoji from a grid of options.",
+  "frontend/src/components/ComposePost.tsx": "Post composition component with a textarea, 280-character counter with color feedback, and a banana-themed submit button supporting Cmd/Ctrl+Enter shortcut.",
+  "frontend/src/components/PostCard.tsx": "Individual post card displaying author avatar, username, content, relative timestamp, and banana reaction button — all profile links now use the typed `to=\"/profile/$userId\"` with `params` prop instead of interpolated strings.",
+  "frontend/src/pages/FeedPage.tsx": "Main feed page showing the banner image, compose box (for registered users), and a list of all posts with skeleton loading states and empty state messaging.",
+  "frontend/src/pages/ProfilePage.tsx": "User profile page displaying avatar, username, follower/following/post counts, a follow/unfollow toggle button, and the user's posts filtered from the global feed.",
+  "frontend/src/index.css": "Global styles with a warm banana-themed OKLCH color system (cream background, cocoa brown text, golden yellow accents), Nunito font import, and utility classes for card shadows and display font.",
+  "frontend/tailwind.config.js": "Extended Tailwind config with Nunito/Nunito Sans font families, banana color tokens (`banana`, `banana-light`, `banana-dark`, `nav`), enhanced border radius scale, and a banana-bounce animation."
+}
